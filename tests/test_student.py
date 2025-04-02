@@ -35,22 +35,25 @@ def test_display_classes():
     name = "Ada"
     grade = "junior"
     classes = ["Math", "Science", "Art"]
+    expect_result = "Math, Science, Art"
     #act
 
     student = Student(name, grade, classes)
-    classes_as_string = student.display_classes()
+    actual_result = student.display_classes()
+    
 
-    assert classes_as_string == "Math, Science, Art"
+    assert actual_result == expect_result
 
 def test_student_summary_return():
     #arrange
     name = "Ada"
     grade = "junior"
     classes = ["Math", "Science", "Art"]
+    expect_result = f"{name} is a {grade} " + "enrolled in 3 classes: " + "Math, Science, Art"
     #act
 
     student = Student(name, grade, classes)
-    summary = student.summary()
+    actual_result = student.summary()
 
-    assert summary == f"{name} is a {grade} " + "enrolled in 3 classes: " + "Math, Science, Art"
+    assert actual_result == expect_result
 
